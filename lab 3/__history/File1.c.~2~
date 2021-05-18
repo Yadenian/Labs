@@ -1,0 +1,57 @@
+#pragma hdrstop
+#pragma argsused
+
+#include <stdio.h>
+
+#ifdef _WIN32
+#include <tchar.h>
+#include <time.h>
+#else
+  typedef char _TCHAR;
+  #define _tmain main
+#endif
+
+int _tmain(int argc, _TCHAR* argv[]) 
+{
+ srand(time(0));
+ int xyz[5][5][5];
+   //создание 2d массивов
+ int xy[5][5],xz[5][5],yz[5][5];
+
+   for(int x = 0; x < 5; x++)
+  {
+	for(int y = 0; y < 5; y++)
+	{
+		for(int z = 0; z < 5; z++)
+	  {
+		 xyz[x][y][z] = rand() % 2;
+	  }
+	}
+  }
+//обход всех точек 3d массива
+ for(int x = 0; x < 5; x++)
+ {
+	for(int y = 0; y < 5; y++)
+	{
+		for(int z = 0; z < 5; z++)
+        {
+            if(xyz[x][y][z] == 0) continue;
+			if(xy[x][y] == 0)
+			{
+			   xy[x][y] = 1;
+			}
+			if(xz[x][z] == 0)
+			{
+			  xz[x][z] = 1;
+			}
+			if(yz[y][z] == 0)
+			{
+              yz[y][z] = 1;
+			}
+	  }
+	}
+  }
+  printf("%d",);
+   system("pause");
+	return 0;
+}

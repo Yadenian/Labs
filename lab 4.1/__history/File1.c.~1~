@@ -1,0 +1,43 @@
+#pragma hdrstop
+#pragma argsused
+
+#include <stdio.h>
+
+#ifdef _WIN32
+#include <tchar.h>
+#include <string.h>
+#else
+  typedef char _TCHAR;
+  #define _tmain main
+#endif
+
+int CountWords(char *str);
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+   char str1[100] = "";
+   int count = 0;
+   printf("Enter the line: ");
+   scanf("%99s",str1);
+   int wordsNumber  = CountWords(&str);
+   system("pause");
+	return 0;
+}
+
+
+int CountWords(char *str)
+{
+  int count = 0;
+ for (int i = 0; i < 100; i++)
+	{
+	 if (str1[i] == ' ')
+	 {
+	   count++;
+	 }
+	 else if (str1[i] == '\0')
+		  {
+			return count;
+		  }
+	 return count;
+	}
+}
