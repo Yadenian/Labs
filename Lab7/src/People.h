@@ -56,7 +56,7 @@ public:
 		int year,
 		int height,
 		int weight,
-		std::string сity);
+		std::string sity);
 
 	std::string setInformation(std::string info);
 	void addHobbies(Hobby hobby);
